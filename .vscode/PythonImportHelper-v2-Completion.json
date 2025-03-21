@@ -1,0 +1,203 @@
+[
+    {
+        "label": "KafkaConsumer",
+        "importPath": "kafka",
+        "description": "kafka",
+        "isExtraImport": true,
+        "detail": "kafka",
+        "documentation": {}
+    },
+    {
+        "label": "KafkaConsumer",
+        "importPath": "kafka",
+        "description": "kafka",
+        "isExtraImport": true,
+        "detail": "kafka",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "smtplib",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "smtplib",
+        "description": "smtplib",
+        "detail": "smtplib",
+        "documentation": {}
+    },
+    {
+        "label": "MIMEText",
+        "importPath": "email.mime.text",
+        "description": "email.mime.text",
+        "isExtraImport": true,
+        "detail": "email.mime.text",
+        "documentation": {}
+    },
+    {
+        "label": "Faker",
+        "importPath": "faker",
+        "description": "faker",
+        "isExtraImport": true,
+        "detail": "faker",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "wait_for_db",
+        "importPath": "helpers",
+        "description": "helpers",
+        "isExtraImport": true,
+        "detail": "helpers",
+        "documentation": {}
+    },
+    {
+        "label": "wait_for_db",
+        "importPath": "helpers",
+        "description": "helpers",
+        "isExtraImport": true,
+        "detail": "helpers",
+        "documentation": {}
+    },
+    {
+        "label": "send_email_alert",
+        "kind": 2,
+        "importPath": "kafka.alert_system",
+        "description": "kafka.alert_system",
+        "peekOfCode": "def send_email_alert(message):\n    msg = MIMEText(message)\n    msg[\"Subject\"] = \"⚠️ ALERT: Perubahan Data!\"\n    msg[\"From\"] = EMAIL_SENDER\n    msg[\"To\"] = EMAIL_RECEIVER\n    with smtplib.SMTP_SSL(\"smtp.gmail.com\", 465) as server:\n        server.login(EMAIL_SENDER, EMAIL_PASSWORD)\n        server.sendmail(EMAIL_SENDER, EMAIL_RECEIVER, msg.as_string())\nconsumer = KafkaConsumer(\n    TOPIC,",
+        "detail": "kafka.alert_system",
+        "documentation": {}
+    },
+    {
+        "label": "TOPIC",
+        "kind": 5,
+        "importPath": "kafka.alert_system",
+        "description": "kafka.alert_system",
+        "peekOfCode": "TOPIC = \"salesdb_server.public.transactions\"\nBROKER = \"localhost:9092\"\nEMAIL_SENDER = \"your_email@gmail.com\"\nEMAIL_PASSWORD = \"your_email_password\"\nEMAIL_RECEIVER = \"admin@example.com\"\ndef send_email_alert(message):\n    msg = MIMEText(message)\n    msg[\"Subject\"] = \"⚠️ ALERT: Perubahan Data!\"\n    msg[\"From\"] = EMAIL_SENDER\n    msg[\"To\"] = EMAIL_RECEIVER",
+        "detail": "kafka.alert_system",
+        "documentation": {}
+    },
+    {
+        "label": "BROKER",
+        "kind": 5,
+        "importPath": "kafka.alert_system",
+        "description": "kafka.alert_system",
+        "peekOfCode": "BROKER = \"localhost:9092\"\nEMAIL_SENDER = \"your_email@gmail.com\"\nEMAIL_PASSWORD = \"your_email_password\"\nEMAIL_RECEIVER = \"admin@example.com\"\ndef send_email_alert(message):\n    msg = MIMEText(message)\n    msg[\"Subject\"] = \"⚠️ ALERT: Perubahan Data!\"\n    msg[\"From\"] = EMAIL_SENDER\n    msg[\"To\"] = EMAIL_RECEIVER\n    with smtplib.SMTP_SSL(\"smtp.gmail.com\", 465) as server:",
+        "detail": "kafka.alert_system",
+        "documentation": {}
+    },
+    {
+        "label": "EMAIL_SENDER",
+        "kind": 5,
+        "importPath": "kafka.alert_system",
+        "description": "kafka.alert_system",
+        "peekOfCode": "EMAIL_SENDER = \"your_email@gmail.com\"\nEMAIL_PASSWORD = \"your_email_password\"\nEMAIL_RECEIVER = \"admin@example.com\"\ndef send_email_alert(message):\n    msg = MIMEText(message)\n    msg[\"Subject\"] = \"⚠️ ALERT: Perubahan Data!\"\n    msg[\"From\"] = EMAIL_SENDER\n    msg[\"To\"] = EMAIL_RECEIVER\n    with smtplib.SMTP_SSL(\"smtp.gmail.com\", 465) as server:\n        server.login(EMAIL_SENDER, EMAIL_PASSWORD)",
+        "detail": "kafka.alert_system",
+        "documentation": {}
+    },
+    {
+        "label": "EMAIL_PASSWORD",
+        "kind": 5,
+        "importPath": "kafka.alert_system",
+        "description": "kafka.alert_system",
+        "peekOfCode": "EMAIL_PASSWORD = \"your_email_password\"\nEMAIL_RECEIVER = \"admin@example.com\"\ndef send_email_alert(message):\n    msg = MIMEText(message)\n    msg[\"Subject\"] = \"⚠️ ALERT: Perubahan Data!\"\n    msg[\"From\"] = EMAIL_SENDER\n    msg[\"To\"] = EMAIL_RECEIVER\n    with smtplib.SMTP_SSL(\"smtp.gmail.com\", 465) as server:\n        server.login(EMAIL_SENDER, EMAIL_PASSWORD)\n        server.sendmail(EMAIL_SENDER, EMAIL_RECEIVER, msg.as_string())",
+        "detail": "kafka.alert_system",
+        "documentation": {}
+    },
+    {
+        "label": "EMAIL_RECEIVER",
+        "kind": 5,
+        "importPath": "kafka.alert_system",
+        "description": "kafka.alert_system",
+        "peekOfCode": "EMAIL_RECEIVER = \"admin@example.com\"\ndef send_email_alert(message):\n    msg = MIMEText(message)\n    msg[\"Subject\"] = \"⚠️ ALERT: Perubahan Data!\"\n    msg[\"From\"] = EMAIL_SENDER\n    msg[\"To\"] = EMAIL_RECEIVER\n    with smtplib.SMTP_SSL(\"smtp.gmail.com\", 465) as server:\n        server.login(EMAIL_SENDER, EMAIL_PASSWORD)\n        server.sendmail(EMAIL_SENDER, EMAIL_RECEIVER, msg.as_string())\nconsumer = KafkaConsumer(",
+        "detail": "kafka.alert_system",
+        "documentation": {}
+    },
+    {
+        "label": "consumer",
+        "kind": 5,
+        "importPath": "kafka.alert_system",
+        "description": "kafka.alert_system",
+        "peekOfCode": "consumer = KafkaConsumer(\n    TOPIC,\n    bootstrap_servers=BROKER,\n    value_deserializer=lambda x: json.loads(x.decode('utf-8'))\n)\nfor msg in consumer:\n    data = msg.value\n    if data.get(\"payload\") and data[\"payload\"].get(\"after\"):\n        transaction = data[\"payload\"][\"after\"]\n        if transaction[\"amount\"] > 10000000 or transaction[\"status\"] == \"failed\":",
+        "detail": "kafka.alert_system",
+        "documentation": {}
+    },
+    {
+        "label": "consumer",
+        "kind": 5,
+        "importPath": "kafka.kafka_consumer",
+        "description": "kafka.kafka_consumer",
+        "peekOfCode": "consumer = KafkaConsumer(\n    \"salesdb_server.public.transactions\",\n    bootstrap_servers=\"localhost:9092\",\n    value_deserializer=lambda x: json.loads(x.decode('utf-8'))\n)\nfor msg in consumer:\n    print(\"Data Baru:\", msg.value)",
+        "detail": "kafka.kafka_consumer",
+        "documentation": {}
+    },
+    {
+        "label": "wait_for_db",
+        "kind": 2,
+        "importPath": "scripts.helpers",
+        "description": "scripts.helpers",
+        "peekOfCode": "def wait_for_db():\n    import psycopg2\n    MAX_RETRIES = 5\n    for i in range(MAX_RETRIES):\n        try:\n            conn = psycopg2.connect(\n                host=\"postgres\",\n                database=\"salesdb\",\n                user=\"user\",\n                password=\"password\"",
+        "detail": "scripts.helpers",
+        "documentation": {}
+    },
+    {
+        "label": "conn",
+        "kind": 5,
+        "importPath": "scripts.insert_dummy_data",
+        "description": "scripts.insert_dummy_data",
+        "peekOfCode": "conn = wait_for_db()\ncursor = conn.cursor()\nfaker = Faker()\nfor _ in range(3000000):\n    cursor.execute(\n        \"INSERT INTO transactions (user_id, amount, status) VALUES (%s, %s, %s)\",\n        (random.randint(1, 10000), round(random.uniform(1000, 50000000), 2), random.choice([\"pending\", \"success\", \"failed\"]))\n    )\nconn.commit()\ncursor.close()",
+        "detail": "scripts.insert_dummy_data",
+        "documentation": {}
+    },
+    {
+        "label": "cursor",
+        "kind": 5,
+        "importPath": "scripts.insert_dummy_data",
+        "description": "scripts.insert_dummy_data",
+        "peekOfCode": "cursor = conn.cursor()\nfaker = Faker()\nfor _ in range(3000000):\n    cursor.execute(\n        \"INSERT INTO transactions (user_id, amount, status) VALUES (%s, %s, %s)\",\n        (random.randint(1, 10000), round(random.uniform(1000, 50000000), 2), random.choice([\"pending\", \"success\", \"failed\"]))\n    )\nconn.commit()\ncursor.close()\nconn.close()",
+        "detail": "scripts.insert_dummy_data",
+        "documentation": {}
+    },
+    {
+        "label": "faker",
+        "kind": 5,
+        "importPath": "scripts.insert_dummy_data",
+        "description": "scripts.insert_dummy_data",
+        "peekOfCode": "faker = Faker()\nfor _ in range(3000000):\n    cursor.execute(\n        \"INSERT INTO transactions (user_id, amount, status) VALUES (%s, %s, %s)\",\n        (random.randint(1, 10000), round(random.uniform(1000, 50000000), 2), random.choice([\"pending\", \"success\", \"failed\"]))\n    )\nconn.commit()\ncursor.close()\nconn.close()\nprint(\"✅ Data dummy berhasil dimasukkan!\")",
+        "detail": "scripts.insert_dummy_data",
+        "documentation": {}
+    },
+    {
+        "label": "conn",
+        "kind": 5,
+        "importPath": "scripts.migrate",
+        "description": "scripts.migrate",
+        "peekOfCode": "conn = wait_for_db()\ncursor = conn.cursor()\ncursor.execute(\"\"\"\nCREATE TABLE IF NOT EXISTS transactions (\n    id SERIAL PRIMARY KEY,\n    user_id INT NOT NULL,\n    amount DECIMAL(10,2) NOT NULL,\n    status VARCHAR(50) NOT NULL,\n    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP\n);",
+        "detail": "scripts.migrate",
+        "documentation": {}
+    },
+    {
+        "label": "cursor",
+        "kind": 5,
+        "importPath": "scripts.migrate",
+        "description": "scripts.migrate",
+        "peekOfCode": "cursor = conn.cursor()\ncursor.execute(\"\"\"\nCREATE TABLE IF NOT EXISTS transactions (\n    id SERIAL PRIMARY KEY,\n    user_id INT NOT NULL,\n    amount DECIMAL(10,2) NOT NULL,\n    status VARCHAR(50) NOT NULL,\n    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP\n);\n\"\"\")",
+        "detail": "scripts.migrate",
+        "documentation": {}
+    }
+]
