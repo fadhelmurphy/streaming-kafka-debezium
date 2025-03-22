@@ -4,7 +4,7 @@ import smtplib
 from email.mime.text import MIMEText
 
 TOPIC = "salesdb_server.public.transactions"
-BROKER = "localhost:9092"
+BROKER = "kafka:9092"
 
 EMAIL_SENDER = "your_email@gmail.com"
 EMAIL_PASSWORD = "your_email_password"

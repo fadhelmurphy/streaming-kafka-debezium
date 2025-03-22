@@ -10,6 +10,8 @@
     "database.server.name": "salesdb_server",
     "table.include.list": "public.transactions",
     "plugin.name": "pgoutput",
-    "slot.name": "debezium_slot"
+    "slot.name": "debezium_slot",
+    "topic.prefix": "salesdb_topic",
+    "snapshot.mode": "never"
   }
 }

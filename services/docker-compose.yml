@@ -1,16 +1,18 @@
 services:
   postgres:
-    image: debezium/postgres:latest
+    image: postgres:15
     container_name: postgres
     restart: always
     environment:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: password
       POSTGRES_DB: salesdb
+    command: ["postgres", "-c", "wal_level=logical", "-c", "max_replication_slots=4", "-c", "max_wal_senders=4"]
     ports:
       - "5432:5432"
     volumes:
-      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./database/sql-scripts:/docker-entrypoint-initdb.d:rw
+      
 
   zookeeper:
     image: confluentinc/cp-zookeeper:latest
@@ -45,6 +47,8 @@ services:
       CONFIG_STORAGE_TOPIC: debezium_configs
       OFFSET_STORAGE_TOPIC: debezium_offsets
       STATUS_STORAGE_TOPIC: debezium_status
+      KAFKA_MAX_REQUEST_SIZE: 200000000
+      KAFKA_MESSAGE_MAX_BYTES: 200000000
     ports:
       - "8083:8083"
     depends_on:
@@ -55,15 +59,17 @@ services:
     container_name: app
     depends_on:
       - postgres
+      - debezium
+      - kafka
     volumes:
       - ..:/app
     working_dir: /app
     command: >
       sh -c "pip install -r requirements.txt &&
-              python scripts/migrate.py &&
-             python scripts/insert_dummy_data.py &&
-             python kafka/kafka_consumer.py &&
-             echo 'App is running!'"
+              curl -X POST -H 'Content-Type: application/json' --data @/app/configs/debezium_connector.json http://debezium:8083/connectors &&
+              sleep 3 &&
+              python kafka/kafka_consumer.py &&
+              echo 'App is running!'"
     environment:
       - DATABASE_URL=postgresql://user:password@postgres:5432/salesdb
 
